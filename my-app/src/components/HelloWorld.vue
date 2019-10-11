@@ -26,7 +26,11 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+ <van-search
+  placeholder="请输入搜索关键词"
+/>
   </div>
+  
 </template>
 
 <script>
@@ -34,7 +38,14 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+   created() {
+     console.log(this)
+        this.$axios.get('https://m.bmtrip.com/api/v3/coupon/activity/detail?rules_id=5&platform=4').then((res) => {
+          // this.list = res.data.data.films;
+          console.log(res)
+        })
+   },
 }
 </script>
 

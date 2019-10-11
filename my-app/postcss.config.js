@@ -1,5 +1,9 @@
 module.exports = {
-  plugins: {
-    autoprefixer: {}
+  'plugins': {
+    'autoprefixer': {},
+    'postcss-px2rem-exclude': {
+      'remUnit': 37.5,
+      'exclude': '/node_modules/i'
+    }
   }
 }
